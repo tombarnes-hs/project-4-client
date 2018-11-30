@@ -17,15 +17,21 @@ class SignUp extends Component {
   }
 
   handleChange = event => this.setState({
+    // `name` and `value` are html properties equal to keys in state
+    // handleChange resets state
     [event.target.name]: event.target.value
   })
 
   signUp = event => {
+    // handles page reset
     event.preventDefault()
 
+    // destructuring of state. Variables from state to be used below
     const { email, password, passwordConfirmation} = this.state
+    // props passed down from App
     const { flash, history, setUser } = this.props
 
+    // NOT a recursive function. This function might as well be ApiSignUp
     signUp(this.state)
       .then(handleErrors)
       .then(() => signIn(this.state))

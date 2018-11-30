@@ -1,5 +1,7 @@
 const apiUrl = 'http://localhost:4741'
 
+// Server requests
+
 export const handleErrors = res => {
   if (res.ok) {
     return res
