@@ -1,6 +1,6 @@
 {
   "name": "project-4-client",
-  "homepage": "https://github.io/TomG84/project-4-client",
+  "homepage": "https://TomG84.github.io/project-4-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -55,7 +55,8 @@
     "test": "node scripts/test.js --env=jsdom",
     "make-standard": "eslint --fix .",
     "nag": "eslint .",
-    "deploy": "sh scripts/deploy.sh"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -100,6 +101,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0"
   }
