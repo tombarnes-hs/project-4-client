@@ -49,6 +49,8 @@ class Ships extends React.Component {
 
     return (
       <React.Fragment>
+        <br></br>
+        <h1>Ships You Own</h1>
         <table>
           <tbody>
             {shipRows}

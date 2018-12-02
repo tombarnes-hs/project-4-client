@@ -1,16 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-class Welcome extends React.Component {
+class ShipCreate extends React.Component {
 
   render() {
     return (
       <React.Fragment>
-        <h1>Welcome. Do stuff.</h1>
-        <Link to="/ships">Ships</Link>
+        <h1>Create Ship Form Here</h1>
       </React.Fragment>
     )
   }
 }
 
-export default Welcome
+export default ShipCreate
