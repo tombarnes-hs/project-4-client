@@ -6,13 +6,15 @@ import Ships from './Ships.js'
 class Dashboard extends React.Component {
 
   render() {
+
     return (
       <div>
-        <h1>This is dashboard. Do Stuff.</h1>
+        <h1>This is dashboard. Do Stuff, {this.props.user.email}.</h1>
         <Link to="/ships">Ships</Link>
         <Router>
           <Switch>
-            <Route exact path="/ships" component={Ships} />
+            <Route exact path="/ships" render={() => (
+              <Ships user={this.props.user} />)} />
           </Switch>
         </Router>
       </div>
