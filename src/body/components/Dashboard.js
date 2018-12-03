@@ -17,7 +17,8 @@ class Dashboard extends React.Component {
           <Switch>
             <Route exact path="/ships" render={() => (
               <Ships user={this.props.user} />)} />
-            <Route exact path="/ships/create" component={ShipCreate} />
+            <Route exact path="/ships/create" render={() => (
+              <ShipCreate user={this.props.user} />)} />
           </Switch>
         </Router>
       </div>

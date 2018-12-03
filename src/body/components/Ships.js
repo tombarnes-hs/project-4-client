@@ -21,13 +21,12 @@ class Ships extends React.Component {
         'Authorization': `Token token=${this.props.user.token}`
       }
     }
-    console.log(config)
     const response = await axios.get(apiUrl, config)
     this.setState({ships: response.data.ships})
   }
 
   render() {
-    console.log(this.state)
+    
     let shipRows
 
     const { ships } = this.state
