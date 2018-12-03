@@ -17,14 +17,19 @@ class Dashboard extends React.Component {
         <button><Link to="/ships/create">Add Ship</Link></button>
         <Router>
           <Switch>
-            <Route exact path="/ships/create" render={() => (
-              <ShipCreate user={this.props.user} ship={this.state}/>)} />
-            <Route exact path="/ships/update" render={(props) => (
-              <ShipUpdate user={this.props.user} {...props}/>)} />
-            <Route exact path="/ships/:id" render={(props) => (
-              <Ship user={this.props.user} {...props}/>)} />
+
             <Route exact path="/ships" render={(props) => (
               <Ships user={this.props.user} {...props}/>)} />
+
+            <Route exact path="/ships/create" render={() => (
+              <ShipCreate user={this.props.user} ship={this.state}/>)} />
+
+            <Route exact path="/ships/:id" render={(props) => (
+              <Ship user={this.props.user} {...props}/>)} />
+
+            <Route exact path="/ships/:id/update" render={(props) => (
+              <ShipUpdate user={this.props.user} {...props}/>)} />
+
           </Switch>
         </Router>
       </div>

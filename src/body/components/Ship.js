@@ -9,7 +9,6 @@ class Ship extends React.Component {
     super(props)
 
     const { id } = this.props.match.params
-    console.log({id})
 
     this.state = {
       ship: {},
@@ -46,7 +45,8 @@ class Ship extends React.Component {
       return <Redirect to='/ships' />
     }
     const { ship } = this.state
-    const { name, pilot, notes } = ship
+    const { name, pilot, notes, id } = ship
+    console.log({ship})
     return (
       <React.Fragment>
         <h1>Unit Info</h1>
@@ -57,7 +57,12 @@ class Ship extends React.Component {
         <h4>{ship ? `Favorite Pilot: ${pilot}` : ''}</h4>
         <p>{ship ? `Notes: ${notes}` : ''}</p>
         <button onClick={this.deleteShip}>Remove from Collection</button>
-        <button><Link to="/ships/update">Update Info</Link></button>
+        <button><Link to={{
+          pathname: `/ships/${id}/update`,
+          state: {
+            ship: {ship}
+          }
+        }}>Update Info</Link></button>
       </React.Fragment>
     )
   }
