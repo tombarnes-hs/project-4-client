@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 
 const apiUrl = 'http://localhost:4741/ships'
@@ -57,6 +57,7 @@ class Ship extends React.Component {
         <h4>{ship ? `Favorite Pilot: ${pilot}` : ''}</h4>
         <p>{ship ? `Notes: ${notes}` : ''}</p>
         <button onClick={this.deleteShip}>Remove from Collection</button>
+        <button><Link to="/ships/update">Update Info</Link></button>
       </React.Fragment>
     )
   }
