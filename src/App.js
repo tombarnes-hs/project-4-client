@@ -31,7 +31,7 @@ class App extends Component {
     clearTimeout(this.messageTimeout)
 
     this.messageTimeout = setTimeout(() => this.setState({flashMessage: null
-    }), 2000)
+    }), 1000)
   }
 
   render () {
@@ -60,6 +60,8 @@ class App extends Component {
         <AuthenticatedRoute user={user} render={() => (
           <Dashboard user={user} />
         )} />
+
+
 
 
       </React.Fragment>
