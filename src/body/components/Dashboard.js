@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 import Ships from './Ships.js'
 import ShipCreate from './ShipCreate.js'
+import Ship from './Ship.js'
 
 class Dashboard extends React.Component {
 
@@ -19,6 +20,8 @@ class Dashboard extends React.Component {
               <Ships user={this.props.user} />)} />
             <Route exact path="/ships/create" render={() => (
               <ShipCreate user={this.props.user} />)} />
+            <Route exact path="/ships/:id" render={() => (
+              <Ship user={this.props.user} />)} />
           </Switch>
         </Router>
       </div>

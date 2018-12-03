@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
 import axios from 'axios'
 
 const apiUrl = 'http://localhost:4741/ships'
@@ -26,7 +26,7 @@ class Ships extends React.Component {
   }
 
   render() {
-    
+
     let shipRows
 
     const { ships } = this.state
@@ -36,6 +36,7 @@ class Ships extends React.Component {
     } else {
       shipRows = ships.map(ship => {
         const { id, name } = ship
+
         return (
           <tr key={id}>
             <td>
