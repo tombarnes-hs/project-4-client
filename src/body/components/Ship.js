@@ -24,14 +24,22 @@ class Ship extends React.Component {
     }
     const { id } = this.props.match.params
     const response = await axios.get(apiUrl + `/${id}`, config)
-    this.setState({movie: response.data.ship})
+    this.setState({ship: response.data.ship})
   }
 
 
   render() {
     console.log(this.state)
+    const { ship } = this.state
+    const { name, pilot, notes } = ship
     return (
-      <h1>Ship Info</h1>
+      <React.Fragment>
+        <h1>Unit Info</h1>
+        <h2>{ship ? name : 'Loading'}</h2>
+        <h3>{ship ? `Favorite Pilot: ${pilot}` : ''}</h3>
+        <p>{ship ? `Notes: ${notes}` : ''}</p>
+
+      </React.Fragment>
     )
   }
 }
