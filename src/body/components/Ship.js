@@ -46,7 +46,7 @@ class Ship extends React.Component {
     }
     const { ship } = this.state
     const { name, pilot, notes, id } = ship
-    console.log({ship})
+    // console.log({ship})
     return (
       <React.Fragment>
         <h1>Unit Info</h1>
