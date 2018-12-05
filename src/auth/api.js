@@ -1,4 +1,5 @@
-const apiUrl = 'http://localhost:4741'
+// const apiUrl = 'http://localhost:4741'
+import apiUrl from '../apiConfig'
 
 // Server requests
 
