@@ -2,7 +2,7 @@ import React from 'react'
 import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 
-const apiUrl = 'http://localhost:4741/ships'
+import apiUrl from '../../apiConfig'
 
 class Ship extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Ship extends React.Component {
       }
     }
     const { id } = this.props.match.params
-    const response = await axios.get(apiUrl + `/${id}`, config)
+    const response = await axios.get(apiUrl + `/ships/${id}`, config)
     this.setState({ship: response.data.ship})
   }
 
@@ -35,7 +35,7 @@ class Ship extends React.Component {
       }
     }
     const id = this.props.match.params.id
-    const response = await axios.delete(apiUrl + `/${id}`, config)
+    const response = await axios.delete(apiUrl + `/ships/${id}`, config)
     this.setState({deleted: true})
   }
 

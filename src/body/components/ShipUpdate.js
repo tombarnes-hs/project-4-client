@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
-const apiUrl = 'http://localhost:4741/ships'
+import apiUrl from '../../apiConfig'
 
 class ShipUpdate extends React.Component {
   constructor(props) {
@@ -10,12 +10,13 @@ class ShipUpdate extends React.Component {
     // props.location.state.ship.ship is the imported state from the Link to this component. Can be refactored
     const name = props.location.state.ship.ship.name
     const id = props.location.state.ship.ship.id
+    const pilot = props.location.state.ship.ship.pilot
     // name and id will not change with user input. This will retain values
     this.state = {
       ship: {
         id: id,
         name: name,
-        pilot: '',
+        pilot: pilot,
         notes: ''
       },
       updated: false
@@ -42,7 +43,7 @@ class ShipUpdate extends React.Component {
         'Authorization': `Token token=${token}`
       }
     }
-    const response = await axios.patch(apiUrl + `/${id}`, shipParams, config)
+    const response = await axios.patch(apiUrl + `/ships/${id}`, shipParams, config)
     this.setState({updated: true})
   }
 

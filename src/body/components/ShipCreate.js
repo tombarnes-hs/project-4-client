@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
-const apiUrl = 'http://localhost:4741/ships'
+import apiUrl from '../../apiConfig'
 
 class ShipCreate extends React.Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class ShipCreate extends React.Component {
         'Authorization': `Token token=${this.props.user.token}`
       }
     }
-    const response = await axios.post(apiUrl, ship, config)
+    const response = await axios.post(apiUrl + '/ships', ship, config)
     this.setState({added: true})
   }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, } from 'react-router-dom'
 import axios from 'axios'
 
-const apiUrl = 'http://localhost:4741/ships'
+import apiUrl from '../../apiConfig'
 
 class Ships extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Ships extends React.Component {
         'Authorization': `Token token=${this.props.user.token}`
       }
     }
-    const response = await axios.get(apiUrl, config)
+    const response = await axios.get(apiUrl + '/ships', config)
     this.setState({ships: response.data.ships})
   }
 

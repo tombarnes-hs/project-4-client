@@ -3,7 +3,7 @@ import './App.scss'
 import { Route, Link } from 'react-router-dom'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
-import Header from './header/Header'
+import Header from './header/Header.js'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
