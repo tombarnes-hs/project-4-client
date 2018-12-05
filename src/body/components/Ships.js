@@ -10,7 +10,8 @@ class Ships extends React.Component {
 
     this.state = {
       // empty array to hold API data
-      ships: []
+      ships: [],
+      user: props.user
     }
   }
 
@@ -18,7 +19,7 @@ class Ships extends React.Component {
   async componentDidMount() {
     const config = {
       headers: {
-        'Authorization': `Token token=${this.props.user.token}`
+        'Authorization': `Token token=${this.state.user.token}`
       }
     }
     const response = await axios.get(apiUrl + '/ships', config)
@@ -26,13 +27,13 @@ class Ships extends React.Component {
   }
 
   render() {
-
+  
     let shipRows
 
     const { ships } = this.state
 
     if (ships.length === 0) {
-      shipRows = <tr><td>Loading</td></tr>
+      shipRows = <tr><td>Your collection is empty. Click above to add a set.</td></tr>
     } else {
       shipRows = ships.map(ship => {
         const { id, name } = ship

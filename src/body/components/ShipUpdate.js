@@ -19,6 +19,7 @@ class ShipUpdate extends React.Component {
         pilot: pilot,
         notes: ''
       },
+      user: props.user,
       updated: false
     }
     this.handleChange = this.handleChange.bind(this)
@@ -37,7 +38,7 @@ class ShipUpdate extends React.Component {
     event.preventDefault()
     const shipParams = {ship: this.state.ship}
     const id = this.state.ship.id
-    const token = this.props.user.token
+    const token = this.state.user.token
     const config = {
       headers: {
         'Authorization': `Token token=${token}`

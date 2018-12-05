@@ -7,11 +7,11 @@ import apiUrl from '../../apiConfig'
 class Ship extends React.Component {
   constructor(props) {
     super(props)
-
     const { id } = this.props.match.params
 
     this.state = {
       ship: {},
+      user: props.user,
       delete: false
     }
     this.deleteShip = this.deleteShip.bind(this)
@@ -20,7 +20,7 @@ class Ship extends React.Component {
   async componentDidMount() {
     const config = {
       headers: {
-        'Authorization': `Token token=${this.props.user.token}`
+        'Authorization': `Token token=${this.state.user.token}`
       }
     }
     const { id } = this.props.match.params

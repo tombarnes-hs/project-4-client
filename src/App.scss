@@ -46,3 +46,17 @@ $charcoal: #ccc;
     max-width: 200px;
   }
 }
+
+.nav:hover {
+  text-decoration: none;
+  color: $charcoal
+}
+
+.nav, {
+  text-decoration: none;
+  color: $charcoal
+}
+
+.dashboard-title {
+  font-size: 1.5em;
+}

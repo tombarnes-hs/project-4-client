@@ -15,6 +15,7 @@ class ShipCreate extends React.Component {
         pilot: '',
         notes: ''
       },
+      user: props.user,
       added: false
     }
 
@@ -32,7 +33,7 @@ class ShipCreate extends React.Component {
     const ship = this.state
     const config = {
       headers: {
-        'Authorization': `Token token=${this.props.user.token}`
+        'Authorization': `Token token=${this.state.user.token}`
       }
     }
     const response = await axios.post(apiUrl + '/ships', ship, config)
