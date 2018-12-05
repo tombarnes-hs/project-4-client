@@ -26,14 +26,24 @@ const Dashboard = ({ user }) => (
       { user ? authenticatedOptions : unauthenticatedOptions }
     </div>
 
-    <Route exact path="/ships" render={(props) => (
-      <Ships user={user} {...props}/>)} />
-    <Route exact path="/ships/create" render={() => (
-      <ShipCreate user={user} ship={this.state}/>)} />
-    <Route exact path="/ships/:id" render={(props) => (
-      <Ship user={user} {...props}/>)} />
-    <Route exact path="/ships/:id/update" render={(props) => (
-      <ShipUpdate user={user} {...props}/>)} />
+    <Router>
+      <Switch>
+
+        <Route exact path="/ships/create" render={() => (
+          <ShipCreate user={user} ship={this.state}/>)} />
+
+        <Route exact path="/ships/:id/update" render={(props) => (
+          <ShipUpdate user={user} {...props}/>)} />
+
+        <Route exact path="/ships/:id" render={(props) => (
+          <Ship user={user} {...props}/>)} />
+
+        <Route exact path="/ships" render={(props) => (
+          <Ships user={user} {...props}/>)} />
+      </Switch>
+    </Router>
+
+
   </React.Fragment>
 )
 
