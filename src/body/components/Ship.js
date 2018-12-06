@@ -1,5 +1,6 @@
 import React from 'react'
 import { Redirect, Link } from 'react-router-dom'
+import { Button } from 'reactstrap'
 import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
@@ -46,7 +47,7 @@ class Ship extends React.Component {
     }
     const { ship } = this.state
     const { name, pilot, notes, id } = ship
-    
+
     return (
       <React.Fragment>
         <h1>Unit Info</h1>
@@ -56,13 +57,13 @@ class Ship extends React.Component {
 
         <h4>{ship ? `Favorite Pilot: ${pilot}` : ''}</h4>
         <p>{ship ? `Notes: ${notes}` : ''}</p>
-        <button onClick={this.deleteShip}>Remove from Collection</button>
-        <button><Link to={{
+        <Button color='danger' onClick={this.deleteShip}>Remove from Collection</Button>
+        <Link to={{
           pathname: `/ships/${id}/update`,
           state: {
             ship: {ship}
           }
-        }}>Update Info</Link></button>
+        }}><Button>Update Info</Button></Link>
       </React.Fragment>
     )
   }
