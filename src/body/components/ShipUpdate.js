@@ -11,13 +11,14 @@ class ShipUpdate extends React.Component {
     const name = props.location.state.ship.ship.name
     const id = props.location.state.ship.ship.id
     const pilot = props.location.state.ship.ship.pilot
+    const notes = props.location.state.ship.ship.notes
     // name and id will not change with user input. This will retain values
     this.state = {
       ship: {
         id: id,
         name: name,
         pilot: pilot,
-        notes: ''
+        notes: notes
       },
       user: props.user,
       updated: false
@@ -54,20 +55,22 @@ class ShipUpdate extends React.Component {
       return <Redirect to='/ships' />
     }
 
-    const { ship } = this.props.location.state.ship
-    const { name, pilot, notes } = ship
-
+    const { ship } = this.state.ship
+    const { name } = this.state.ship.name
+    const { pilot } = this.state.ship.pilot
+    const { notes } = this.state.ship.notes
+    console.log({notes})
     return (
       <React.Fragment>
-        <h1>Update your Favorite Pilot or Notes for { name }</h1>
+        <h1>Update your Favorite Pilot or Notes for { this.state.ship.name }</h1>
         <form>
           <label htmlFor='pilot'>
             Favorite Pilot:
             <input
               name='pilot'
               type='text'
-              value={this.state.ship.pilot}
-              placeholder={ pilot }
+              value= { pilot }
+              placeholder={this.state.ship.pilot }
               onChange={this.handleChange}
             />
           </label>
@@ -78,8 +81,8 @@ class ShipUpdate extends React.Component {
             <textarea
               name='notes'
               type='text'
-              value={this.state.ship.notes}
-              placeholder={ notes }
+              value={ notes }
+              placeholder={this.state.ship.notes}
               onChange={this.handleChange}
             />
           </label>
