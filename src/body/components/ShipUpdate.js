@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
@@ -62,33 +63,31 @@ class ShipUpdate extends React.Component {
     return (
       <React.Fragment>
         <h1>Update your Favorite Pilot or Notes for { this.state.ship.name }</h1>
-        <form>
-          <label htmlFor='pilot'>
-            Favorite Pilot:
-            <input
+        <Form>
+          <FormGroup>
+            <Label htmlFor='pilot'>Favorite Pilot:</Label>
+            <Input
               name='pilot'
               type='text'
               value= { pilot }
               placeholder={this.state.ship.pilot }
               onChange={this.handleChange}
             />
-          </label>
+          </FormGroup>
           <br></br>
-          <br></br>
-          <label htmlFor='notes'>
-            Notes:
-            <textarea
+          <FormGroup>
+            <Label htmlFor='notes'>Notes:</Label>
+            <Input type='textarea'
               name='notes'
-              type='text'
               value={ notes }
               placeholder={this.state.ship.notes}
               onChange={this.handleChange}
             />
-          </label>
+          </FormGroup>
           <br></br>
-          <br></br>
-          <button onClick={this.handleSubmit}>Submit</button>
-        </form>
+          
+          <Button onClick={this.handleSubmit}>Submit</Button>
+        </Form>
 
       </React.Fragment>
     )

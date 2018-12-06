@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
 import apiUrl from '../../apiConfig'
 
@@ -78,7 +78,6 @@ class ShipCreate extends React.Component {
             <Label htmlFor='notes'>Notes:</Label>
             <Input type='textarea'
               name='notes'
-              // type='text'
               placeholder='Make some notes about your favorite pilot for this ship...'
               value={this.state.ship.notes}
               onChange={this.handleChange}
