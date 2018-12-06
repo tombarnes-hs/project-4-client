@@ -1,6 +1,6 @@
 import React from 'react'
 import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import { Button, ButtonGroup, Navbar, NavbarBrand, NavItem, NavLink, Nav } from 'reactstrap'
+import { Button, ButtonGroup, Navbar, NavbarBrand, NavItem, NavLink, Nav, Row, Col } from 'reactstrap'
 
 import Ships from './Ships.js'
 import ShipCreate from './ShipCreate.js'
@@ -24,9 +24,9 @@ const unauthenticatedOptions = (
 
 const Dashboard = ({ user }) => (
   <React.Fragment>
-    <div>
-      { user ? authenticatedOptions : unauthenticatedOptions }
-    </div>
+
+    { user ? authenticatedOptions : unauthenticatedOptions }
+
 
     <Router>
       <Switch>

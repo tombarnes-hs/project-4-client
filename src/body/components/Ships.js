@@ -1,5 +1,16 @@
 import React from 'react'
 import { Link, } from 'react-router-dom'
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardText,
+  CardSubtitle,
+  Button,
+  Container,
+  Col,
+  Row
+} from 'reactstrap'
 import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
@@ -32,17 +43,27 @@ class Ships extends React.Component {
     const { ships } = this.state
 
     if (ships.length === 0) {
-      shipRows = <tr><td>Loading</td></tr>
+      shipRows = <tr><td>You have no ships. Add one with the button above</td></tr>
     } else {
       shipRows = ships.map(ship => {
-        const { id, name } = ship
+        const { id, name, pilot, notes } = ship
 
         return (
-          <tr key={id}>
-            <td>
-              <Link to={`/ships/${id}`}>{name}</Link>
-            </td>
-          </tr>
+          <Container key={id}>
+
+
+            <Card>
+              <CardBody>
+                <CardTitle>{name}</CardTitle>
+                <CardSubtitle>Favorite Pilot: {pilot}</CardSubtitle>
+
+                <Link to={`/ships/${id}`}><Button>View More</Button></Link>
+              </CardBody>
+            </Card>
+
+
+          </Container>
+
         )
       })
     }
