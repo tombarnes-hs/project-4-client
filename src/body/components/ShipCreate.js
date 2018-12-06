@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
 
 import apiUrl from '../../apiConfig'
 
@@ -47,10 +48,10 @@ class ShipCreate extends React.Component {
     return (
       <React.Fragment>
         <h1>Fill out form to add ship</h1>
-        <form>
-          <label htmlFor='name'>
-            Ship Title:
-            <input
+        <Form>
+          <FormGroup>
+            <Label htmlFor='name'>Ship Title:</Label>
+            <Input
               name='name'
               type='text'
               placeholder='X-Wing'
@@ -58,35 +59,35 @@ class ShipCreate extends React.Component {
               value={this.state.ship.name}
               onChange={this.handleChange}
             />
-          </label>
+          </FormGroup>
           <br></br>
           <br></br>
-          <label htmlFor='pilot'>
-            Favorite Pilot:
-            <input
+          <FormGroup>
+            <Label htmlFor='pilot'>Favorite Pilot:</Label>
+            <Input
               name='pilot'
               type='text'
               placeholder='Luke Skywalker'
               value={this.state.ship.pilot}
               onChange={this.handleChange}
             />
-          </label>
+          </FormGroup>
           <br></br>
           <br></br>
-          <label htmlFor='notes'>
-            Notes:
-            <textarea
+          <FormGroup>
+            <Label htmlFor='notes'>Notes:</Label>
+            <Input type='textarea'
               name='notes'
-              type='text'
+              // type='text'
               placeholder='Make some notes about your favorite pilot for this ship...'
               value={this.state.ship.notes}
               onChange={this.handleChange}
             />
-          </label>
+          </FormGroup>
           <br></br>
           <br></br>
-          <button onClick={this.handleSubmit}>Submit</button>
-        </form>
+          <Button onClick={this.handleSubmit}>Submit</Button>
+        </Form>
       </React.Fragment>
     )
   }
