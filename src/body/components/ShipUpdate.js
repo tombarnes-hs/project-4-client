@@ -59,7 +59,6 @@ class ShipUpdate extends React.Component {
     const { name } = this.state.ship.name
     const { pilot } = this.state.ship.pilot
     const { notes } = this.state.ship.notes
-    console.log({notes})
     return (
       <React.Fragment>
         <h1>Update your Favorite Pilot or Notes for { this.state.ship.name }</h1>

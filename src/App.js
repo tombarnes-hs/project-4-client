@@ -43,22 +43,20 @@ class App extends Component {
         {flashMessage && <h3 className={flashType}>{flashMessage}</h3>}
 
         <main className="container">
-          <Router>
-            <Switch>
-              <Route path='/sign-up' render={() => (
-                <SignUp flash={this.flash} setUser={this.setUser} />
-              )} />
-              <Route path='/sign-in' render={() => (
-                <SignIn flash={this.flash} setUser={this.setUser} />
-              )} />
-              <AuthenticatedRoute user={user} path='/sign-out' render={() => (
-                <SignOut flash={this.flash} clearUser={this.clearUser} user={user} />
-              )} />
-              <AuthenticatedRoute user={user} path='/change-password' render={() => (
-                <ChangePassword flash={this.flash} user={user} />
-              )} />
-            </Switch>
-          </Router>
+
+          <Route path='/sign-up' render={() => (
+            <SignUp flash={this.flash} setUser={this.setUser} />
+          )} />
+          <Route path='/sign-in' render={() => (
+            <SignIn flash={this.flash} setUser={this.setUser} />
+          )} />
+          <AuthenticatedRoute user={user} path='/sign-out' render={() => (
+            <SignOut flash={this.flash} clearUser={this.clearUser} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/change-password' render={() => (
+            <ChangePassword flash={this.flash} user={user} />
+          )} />
+
           <Dashboard user={user} />
         </main>
         {/* <AuthenticatedRoute user={user} exact path='/' render={() => (
