@@ -1,6 +1,6 @@
 import React from 'react'
 import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import { Button, ButtonGroup, Container, Row, Col } from 'reactstrap'
+import { Button, ButtonGroup, Navbar, NavbarBrand, NavItem, NavLink, Nav } from 'reactstrap'
 
 import Ships from './Ships.js'
 import ShipCreate from './ShipCreate.js'
@@ -9,8 +9,10 @@ import Ship from './Ship.js'
 
 const authenticatedOptions = (
   <React.Fragment>
-    <button><Link to="/ships">View Owned Ships</Link></button>
-    <button><Link to="/ships/create">Add Ship</Link></button>
+    <ButtonGroup>
+      <Link to="/ships"><Button>View Owned Ships</Button></Link>
+      <Link to="/ships/create"><Button>Add Ship</Button></Link>
+    </ButtonGroup>
   </React.Fragment>
 )
 
