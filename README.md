@@ -53,16 +53,16 @@ The scope of this project is ambitious and I have a long way to go. Below is a l
 #### User Stories
 
 ##### AUTH
-User can log-in with email/password
-User can sign up with email/password
-User can change password only when logged in
-User can sign out once logged in
+* User can log-in with email/password
+* User can sign up with email/password
+* User can change password only when logged in
+* User can sign out once logged in
 
 ##### SHIP
-Auth User can add a ship with favorite pilot and notes
-Auth User can view all owned ships
-Auth User can edit notes and favorite pilot of an owned ship
-Auth User can delete a ship
+* Auth User can add a ship with favorite pilot and notes
+* Auth User can view all owned ships
+* Auth User can edit notes and favorite pilot of an owned ship
+* Auth User can delete a ship
 
 #### Wireframes
 
